@@ -1,1 +1,1 @@
-Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots
+SDAX: Unsupervised Skill Discovery As eXploration for Learning Agile Locomotion
