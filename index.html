@@ -1,10 +1,11 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots</title>
+		<title>Unsupervised Skill Discovery as Exploration for Learning Agile Locomotion</title>
 		<meta charset="utf-8" />
 		 <meta name="viewport" content="width=1000">
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" type="image/png" href="images/gt_logo2.png">
 
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-LS6L6LB7RX"></script>
@@ -16,10 +17,10 @@
 		gtag('config', 'G-LS6L6LB7RX');
 		</script>
 
-		<meta property="og:url"           content="https://umi-gripper.github.io" />
+		<meta property="og:url"           content="https://sdax.github.io" />
 	    <meta property="og:type"          content="website" />
-	    <meta property="og:title"         content="Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots" />
-	    <meta property="og:description"   content="We present Universal Manipulation Interface (UMI) -- a data collection and policy learning framework that allows direct skill transfer from in-the-wild human demonstrations to deployable robot policies. UMI employs hand-held grippers coupled with careful interface design to enable portable, low-cost, and information-rich data collection for challenging bimanual and dynamic manipulation demonstrations. To facilitate deployable policy learning, UMI incorporates a carefully designed policy interface with inference-time latency matching and a relative-trajectory action representation. The resulting learned policies are hardware-agnostic and deployable across multiple robot platforms. Equipped with these features, UMI framework unlocks new robot manipulation capabilities, allowing zero-shot generalizable dynamic, bimanual, precise, and long-horizon behaviors, by only changing the training data for each task. We demonstrate UMI’s versatility and efficacy with comprehensive real-world experiments, where policies learned via UMI zero-shot generalize to novel environments and objects when trained on diverse human demonstrations." />
+	    <meta property="og:title"         content="Unsupervised Skill Discovery as Exploration for Learning Agile Locomotion" />
+	    <meta property="og:description"   content="We present a novel approach for learning agile locomotion skills through unsupervised skill discovery. Our method enables legged robots to discover and master complex locomotion behaviors, including wall-jumping and other super agile tasks, without requiring task-specific demonstrations or rewards. By treating skill discovery as an exploration process, our approach automatically learns diverse and robust locomotion policies that can adapt to challenging environments and perform dynamic maneuvers." />
 	    
 
 	</head>
@@ -29,529 +30,271 @@
 		<!-- Main -->
 			<div id="main" style="padding-bottom:1em; padding-top: 5em; width: 60em; max-width: 70em; margin-left: auto; margin-right: auto;">
 					<section id="four">
-						<div class="box alt" style="margin-bottom: 1em;">
+						<!-- <div class="box alt" style="margin-bottom: 1em;">
 							<div class="row 0% uniform" style="width: 100%; display: flex; justify-content: space-between;">
 								<!-- Stanford Logo -->
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 20%">
+								<!-- <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 20%">
 									<span class="image fit" style="margin-bottom: 0.5em; margin-top: 0.3em">
 										<img src="images/stanford_logo.png" alt="">
 									</span>
-								</div>
+								</div> -->
 								<!-- Columbia Logo -->
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 22%">
+								<!-- <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 22%">
 									<span class="image fit" style="margin-bottom: 0.5em; margin-top: 0.3em">
 										<img src="images/columbia_engineering_logo.svg" alt="">
 									</span>
-								</div>
+								</div> -->
 								<!-- TRI Logo -->
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 22%">
+								<!-- <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 22%">
 									<span class="image fit" style="margin-bottom: 0.5em; margin-top: 0.3em">
 										<img src="images/tri_logo_landscape.svg" alt="">
 									</span>
-								</div>
+								</div> -->
 								<!-- MIT Logo -->
 								<!-- <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 25%">
 									<span class="image fit" style="margin-bottom: 0.5em; margin-top: 0.3em">
 										<img src="images/mit_logo.svg" alt="">
 									</span>
 								</div> -->
-							</div>
+							<!-- </div>
+						</div> --> 
+
+						<h1 style="text-align: center; margin-bottom: 0; color: #1f4e8b; font-size: 225%">SDAX: Unsupervised <b style="color: #1f4e8b; font-weight: 900; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); font-size: 1.1em;">S</b>kill <b style="color: #1f4e8b; font-weight: 900; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); font-size: 1.1em;">D</b>iscovery <b style="color: #1f4e8b; font-weight: 900; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); font-size: 1.1em;">A</b>s e<b style="color: #1f4e8b; font-weight: 900; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); font-size: 1.1em;">X</b>ploration</h1>
+						<h2 style="text-align: center; white-space: nowrap; font-size: 200%">for Learning Agile Locomotion</h2>
+						
+						<div style="text-align: center; margin-top: 1em; margin-bottom: 2em;">
+							<p style="font-size: 1.3em; margin-bottom: 0.5em; color: #1f4e8b;">
+								<a href="https://scholar.google.com/citations?user=GmtZ_jYAAAAJ&hl=ko" style="color: #1f4e8b; text-decoration: none !important; border-bottom: none !important;">Seungeun Rho</a><sup>*</sup>, 
+								<a href="https://sites.google.com/view/kartik-garg/home" style="color: #1f4e8b; text-decoration: none !important; border-bottom: none !important;">Kartik Garg</a><sup>*</sup>, 
+								<a href="https://morganbyrd03.github.io/" style="color: #1f4e8b; text-decoration: none !important; border-bottom: none !important;">Morgan Byrd</a>, 
+								<a href="https://faculty.cc.gatech.edu/~sha9/" style="color: #1f4e8b; text-decoration: none !important; border-bottom: none !important;">Sehoon Ha</a>
+							</p>
+							<p style="font-size: 1.1em; color: #666; margin-bottom: 0.2em;">
+								Georgia Institute of Technology
+							</p>
+							<p style="font-size: 0.9em; color: #888; margin-top: 0;">
+								<sup>*</sup> Equal contribution
+							</p>
 						</div>
 
-						<h1 style="text-align: center; margin-bottom: 0; color: #8C1515; font-size: 300%">Universal Manipulation Interface</h1>
-						<h2 style="text-align: center; white-space: nowrap; font-size: 200%">In-The-Wild Robot Teaching Without In-The-Wild Robots</h2>
-
-						<div class="box alt" style="margin-bottom: 1em;">
-							<div class="row 50% uniform" style="width: 100%; color: black;">
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.33%">
-									Human Demonstration with UMI
-								</div>
-								
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 66.67%">
-									Fully Autonomous Policy Rollout
-								</div>
-							</div>
+						<div class="box alt" style="margin-bottom: 2em;">
+							<!-- <div style="text-align: center; margin-bottom: 1em;">
+								<h3 style="color: black; margin-bottom: 0.5em;">Agile Locomotion via Unsupervised Skill Discovery</h3>
+							</div> -->
 							<div class="row 50% uniform" style="width: 100%;">
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.33%">
-									<span class="image fit">
-										<video autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/teaser_data_collection_dish.mp4" type="video/mp4">	
+								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 100%">
+									<span class="image fit" style="margin-bottom: 0.5em;">
+										<video controls autoplay loop muted playsinline style="width: 100%; border-radius: 10px;">
+											<source src="vidoes_parkour/Unsupervised_Skill_Discovery_as_Exploration_for_Learning_Agile_Locomotion_CoRL_Submission_v5.mp4" type="video/mp4">
 										</video>
 									</span>
-									<!-- Dish Washing Data Collection-->
-								</div>
-
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.33%">
-									<span class="image fit">
-										<video autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/task_dish_washing_1x_compressed.mp4" type="video/mp4">	
-										</video>
-										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 2em">1x</p>
-										</div>
-									</span>
-									<!-- Dish Washing -->
-								</div>
-
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.33%">
-									<span class="image fit">
-										<video autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/task_cloth_folding_1x_compressed.mp4" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 2em">1x</p>
-										</div>
-									</span>
-									<!-- Cloth Folding -->
-								</div>
-							</div>
-							<div class="row 50% uniform" style="width: 100%">
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.33%">
-									<span class="image fit">
-										<video autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/teaser_data_collection_cup.mp4" type="video/mp4">	
-										</video>
-									</span>
-									<!-- Cup Arrangement Data Collection-->
-								</div>
-								
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.33%">
-									<span class="image fit">
-										<video autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/task_cup_arrangement_1x_compressed.mp4" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 2em">1x</p>
-										</div>
-									</span>
-									<!-- Cup Arrangement -->
-								</div>
-
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.33%">
-									<span class="image fit">
-										<video autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/task_dynamic_tossing_1x_compressed.mp4" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; right: 1%">
-											<p style="color: white; text-align: center; font-size: 2em">1x</p>
-										</div>
-									</span>
-									<!-- Dynamic Tossing -->
 								</div>
 							</div>
 						</div>
 								
-
-						<p style="color: black;">We present Universal Manipulation Interface (UMI) -- a data collection and policy learning framework that allows direct skill transfer from in-the-wild human demonstrations to deployable robot policies. UMI employs hand-held grippers coupled with careful interface design to enable portable, low-cost, and information-rich data collection for challenging bimanual and dynamic manipulation demonstrations. To facilitate deployable policy learning, UMI incorporates a carefully designed policy interface with inference-time latency matching and a relative-trajectory action representation. The resulting learned policies are hardware-agnostic and deployable across multiple robot platforms. Equipped with these features, UMI framework unlocks new robot manipulation capabilities, allowing zero-shot generalizable dynamic, bimanual, precise, and long-horizon behaviors, by only changing the training data for each task. We demonstrate UMI’s versatility and efficacy with comprehensive real-world experiments, where policies learned via UMI zero-shot generalize to novel environments and objects when trained on diverse human demonstrations.
+						<hr>
+						<h3 style="color: #1f4e8b;">Abstract</h3>
+						<p style="color: black;">Exploration is crucial for legged robots to learn agile locomotion behaviors capable of overcoming diverse obstacles. 
+							For example, a robot may need to try different contact patterns and momentum profiles to successfully jump over an obstacle—but encouraging such diverse exploration is inherently challenging. As a result, training these behaviors often relies on additional techniques such as extensive reward engineering, expert demonstrations, or curriculum learning. However, these approaches limit generalizability, especially when prior knowledge or demonstration data is unavailable.
+							In this work, we propose using unsupervised skill discovery as a skill-level exploration strategy to significantly reduce human engineering effort. Our learning framework enables the agent to autonomously discover diverse skills to overcome complex obstacles. To dynamically regulate the degree of exploration throughout training, we introduce a bi-level optimization process that learns a parameter to balance two distinct reward signals. We demonstrate that our method enables quadrupedal robots to acquire highly agile behaviors—including crawling, climbing, leaping, and complex maneuvers such as jumping off vertical walls. Finally, we successfully deploy the learned policy on real hardware, validating its transferability to the real world.
 						</p>
 		
 						<hr>
-						<h3>Paper</h3>
+						<h3 style="color: #1f4e8b;">Paper and Code</h3>
 						<p style="margin-bottom: 0em;">
-							<!-- Latest version: <a href="umi.pdf">here</a>. -->
-							Latest version: <a href="https://arxiv.org/abs/2402.10329">arXiv</a> or <a href="umi.pdf">here</a>.
-							<br>Robotics: Science and Systems (RSS) 2024<br>
+							Latest version: <a href="Unsupervised_Skill_Discovery_as_Exploration_for_Learning_Agile_Locomotion_compressed.pdf">here</a> | 
+							Code: <a href="https://github.com/sdax-locomotion/skill-discovery">GitHub</a>
+							<br>Conference on Robot Learning (CoRL) 2025<br>
 						</p>
-						<p style="margin-bottom: 1em; color: #4e79a7">★ Best Systems Paper Award Finalist, RSS ★</p>
-						<div class="12u$"><a href="umi.pdf"><span class="image fit" style="border: 1px solid; border-color: #888888;"><img src="images/umi_thumbnail.png" alt="" /></span></a></div>
+						<div class="12u$"><a href="Unsupervised_Skill_Discovery_as_Exploration_for_Learning_Agile_Locomotion_compressed.pdf"><span class="image fit" style="border: 1px solid; border-color: #888888;"><img src="images/Unsupervised_Skill_Discovery_as_Exploration_for_Learning_Agile_Locomotion_compressed_thumbnail.png" alt="" /></span></a></div>
 
-						
-						<h3>Code and Tutorial</h3>
 
-						<div class="box alt" style="margin-bottom: 1em;">
-							<div class="row 50% uniform" style="width: 100%;">
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 10%">
-									<a href="https://github.com/real-stanford/universal_manipulation_interface">
-										<span class="image fit" style="margin-bottom: 0.5em;">
-											<img src="images/github_logo.svg" alt=""/>
-										</span>
-										Codebase
-									</a>
-								</div>
-
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 10%">
-									<a href="https://docs.google.com/document/d/1TPYwV9sNVPAi0ZlAupDMkXZ4CA1hsZx7YDMSmcEy6EU/edit?usp=sharing">
-										<span class="image fit" style="margin-bottom: 0.5em;">
-											<img src="images/build.svg" alt=""/>
-										</span>
-										Hardware Guide
-									</a>
-								</div>
-
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 10%">
-									<a href="https://swanky-sphere-ad1.notion.site/UMI-Data-Collection-Tutorial-4db1a1f0f2aa4a2e84d9742720428b4c?pvs=4">
-										<span class="image fit" style="margin-bottom: 0.5em;">
-											<img src="images/documentation.svg" alt=""/>
-										</span>
-										Data Collection Instruction
-									</a>
-								</div>
-							<!-- </div> -->
-						<!-- </div>
-
-						<div class="box alt" style="margin-bottom: 1em; margin-top: 1em;"> -->
-							<!-- <div class="row 50% uniform" style="width: 100%;"> -->
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 30%;">
-									<span style="margin-bottom: 0.5em;">
-										<iframe height=20% src="https://www.youtube.com/embed/EJmAg1Bnp-k?si=c5q8eiYyuAao3opy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-									</span>
-									<br>
-									<a href="https://youtu.be/EJmAg1Bnp-k?si=24dVkyAtTY2MHnLp">3D Printing Tutorial</a>
-								</div>
-
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 7%">
-								</div>
-
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 30%">
-									<span style="margin-bottom: 0.5em;">
-										<iframe src="https://www.youtube.com/embed/x3ko0v_xwpg?si=0cXzjI4zI8P9UDxd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-									</span>
-									<br>
-									<a href="https://youtu.be/x3ko0v_xwpg?si=cQnTKZEktMx3oPpf">Assembly Tutorial</a>
-								</div>
-							</div>
-						</div>
 						
 						<hr>
-						<h3>Team</h3>
-						<section>
-							<div class="box alt" style="margin-bottom: 1em;">
-								<div class="row 50% uniform" style="width: 100%">
-									<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 12.5%">
-										<a href="https://cheng-chi.github.io/"><span class="image fit" style="margin-bottom: 0.5em;">
-											<img src="images/cheng_thumbnail.jpg" alt="" style="border-radius: 50%;" /></span>Cheng Chi<sup>*1,2</sup></a></div>
-									
-									<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 12.5%">
-										<a href="https://zhenjiaxu.com/"><span class="image fit" style="margin-bottom: 0.5em;">
-											<img src="images/zhenjia_thumbnail.jpg" alt="" style="border-radius: 50%;" /></span>Zhenjia Xu<sup>*1,2</sup></a></div>
-									
-									<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 12.5%">
-										<a href="https://chuerpan.com/"><span class="image fit" style="margin-bottom: 0.5em;">
-											<img src="images/chuer_thumbnail.jpg" alt="" style="border-radius: 50%;" /></span>Chuer Pan<sup>1</sup></a></div>
-
-									<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 12.5%">
-										<a href="https://www.eacousineau.com/"><span class="image fit" style="margin-bottom: 0.5em;">
-											<img src="images/eric_thumbnail.png" alt="" style="border-radius: 50%;" /></span>Eric Cousineau<sup>3</sup></a></div>
-									
-									<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 12.5%">
-										<a href="http://www.benburchfiel.com/"><span class="image fit" style="margin-bottom: 0.5em;">
-											<img src="images/benjamin_thumbnail.jpg" alt="" style="border-radius: 50%;" /></span>Benjamin Burchfiel<sup>3</sup></a></div>
-
-									<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 12.5%">
-										<a href="https://www.cs.cmu.edu/~sfeng/"><span class="image fit" style="margin-bottom: 0.5em;">
-											<img src="images/siyuan_thumbnail.jpg" alt="" style="border-radius: 50%;" /></span>Siyuan Feng<sup>3</sup></a></div>
-											
-									<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 12.5%">
-										<a href="https://groups.csail.mit.edu/locomotion/russt.html"><span class="image fit" style="margin-bottom: 0.5em;">
-											<img src="images/russ_thumbnail.jpg" alt="" style="border-radius: 50%;" /></span>Russ Tedrake<sup>3</sup></a></div>
-
-									<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 12.5%"
-									><a href="https://shurans.github.io/"><span class="image fit" style="margin-bottom: 0.5em;">
-										<img src="images/shuran_thumbnail.jpeg" alt="" style="border-radius: 50%;" /></span>Shuran Song<sup>1,2</sup></a></div>
-									
-								</div>
-							</div>
-						</section>
-						<p>
-							<sup>1</sup> Stanford University&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<sup>2</sup> Columbia University&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<sup>3</sup> Toyota Research Institute&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<!-- <sup>4</sup> MIT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-							<sup>*</sup> Indicates equal contribution
-						</p>
 				
-						<h3>BibTeX</h3>
-						<pre><code>@inproceedings{chi2024universal,
-	title={Universal Manipulation Interface: In-The-Wild Robot Teaching Without In-The-Wild Robots},
-	author={Chi, Cheng and Xu, Zhenjia and Pan, Chuer and Cousineau, Eric and Burchfiel, Benjamin and Feng, Siyuan and Tedrake, Russ and Song, Shuran},
-	booktitle={Proceedings of Robotics: Science and Systems (RSS)},
-	year={2024}
+						<h3 style="color: #1f4e8b;">BibTeX</h3>
+						<pre><code>@inproceedings{rho2025sdax,
+	title={Unsupervised Skill Discovery as Exploration for Learning Agile Locomotion},
+	author={Rho, Seungeun and Garg, Kartik and Byrd, Morgan and Ha, Sehoon},
+	booktitle={9th Annual Conference on Robot Learning},
+	year={2025}
 }</code></pre>
 					
 						<hr>
-						<h3>Hardware Design</h3>
-						<b>How can we capture sufficient information for a wide variety of tasks with just a wrist-mounted camera?</b>
+						<h3 style="color: #1f4e8b;">Method Overview</h3>
+						<p style="color: black;"><b style="color: #8B7000;">How can we enable robots to discover and learn agile locomotion skills without manual reward engineering?</b>
+						<br><br>
+						Our approach combines <b style="color: #8B7000;">reinforcement learning with unsupervised skill discovery</b> using a novel bi-level optimization framework. Instead of requiring complex reward engineering, the method automatically balances exploration and task completion.
+						</p>
+						
+						<h4 style="color: #1f4e8b;">Core Algorithm</h4>
+						<p style="color: black;">We train a <b style="color: #8B7000;">skill-conditioned policy π(a|s,z)</b> that optimizes both task completion and skill diversity. The policy is parameterized by neural network weights <b style="color: #8B7000;">θ</b>, which we optimize using:
 						<br>
-						UMI’s data collection hardware takes the form of a hand-held parallel jaw gripper, mounted with a GoPro camera ①.
-						<br>
-						To gather policy-deployable observations, UMI needs to capture sufficient visual context to infer action ② and critical information like depth ③.
-						<br>
-						To obtain action data leading to deployable policies, UMI needs to capture precise robot action under fast human motion ④, 
-						fine adjustments on griping width ⑤, and automatically check whether each demonstration is valid under the specific robot kinematic constraints ⑥.
-						<div class="row 50% uniform" style="width: 100%; margin-top: 0.5em;">
+						<code>θ = argmaxJ<sup>task+div</sup> = argmaxE<sub>π<sub>θ</sub></sub>[∑<sup>∞</sup><sub>t=0</sub> γ<sup>t</sup> (r<sup>task</sup><sub>t</sub> + λ r<sup>div</sup><sub>t</sub>)]</code>
+						<br><br>
+						
+						The key innovation is a <b style="color: #8B7000;">learnable balancing parameter λ</b> that automatically adjusts the weight between:
+						<ul style="margin-left: 1.5em; color: black;">
+							<li><b style="color: #8B7000;">Task reward (r<sub>task</sub>):</b> Simple goal-oriented signal (e.g., forward velocity)</li>
+							<li><b style="color: #8B7000;">Diversity reward (r<sub>div</sub>):</b> Encourages different skills to explore distinct behaviors</li>
+						</ul>
+						</p>
+						
+						<div class="row 50% uniform" style="width: 60%; margin-top: 1em; margin-bottom: 1em; margin-left: 10%; margin-right: 30%;">
 							<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 100%">
 								<span class="image fit">
-									<img src="images/UMI_hardware.jpg" alt="">
+									<img src="images/method.png" alt="" style="display: block; margin-left: auto; margin-right: auto;">
 								</span>
+								<p style="color: #666; font-size: 0.9em; margin-top: 0.5em; font-style: italic; text-align: center;">
+									A figure of bi-level optimization for π<sub>θ</sub> and λ. The task reward gives the gradient signal for training λ, and the sum of both sources of rewards provides the gradient signal for optimizing π<sub>θ</sub>.
+								</p>
 							</div>
 						</div>
-·
-						<hr>
-						<h3>Policy Robustness</h4>
-						Enabled by our unique wrist-only camera setup and camera-centric action representations, UMI is 100% calibration-free (functioning even with base movement) and robust against distractors and drastic lighting changes.
-						<div class="box alt" style="margin-bottom: 1em;">
-							<div class="row 50% uniform" style="width: 100%;">
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.3%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/robustness_move_base.mp4" type="video/mp4"> </video>
-									</span>
-									Robot Base Movements
-								</div>
-
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.3%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/robustness_light_with_gopro.mp4" type="video/mp4"> </video>
-									</span>
-									Different Lighting Conditions
-								</div>
-								
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.3%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/robustness_sauce.mp4" type="video/mp4"> </video>
-									</span>
-									Perturbations with Other Sauce
-								</div>
-							</div>
-						</div>
-
-						<hr>
-						<h3>Capability Experiments</h3>
 						
-						<h4>(1) Dynamic Tossing &#129342; </h4>
-						<u><b>Task</b></u> The robot is tasked to sort 6 objects by tossing them to the corresponding bin. The 3 spherical objects (baseball &#9918;, orange &#127818;, apple &#127822;) should be tossed into the round bin, while the 3 Lego Duplo pieces go into the rectangular bin.
-						<!-- <br>
-						<u><b>Capability</b></u> It demonstrates UMI’s ability to capture and transfer fluid and rapid human motions, precise hand-eye coordination (between RGB and propriocep- tion) and timing alignment (between robot and gripper). -->
+						<h4 style="color: #1f4e8b;">Bi-Level Optimization</h4>
+						<p style="color: black;">While the policy parameters θ optimize the combined objective, λ is trained using <b style="color: #8B7000;">only the task reward</b>:
 						<br>
-						<u><b>Ablation</b></u> Without inference-time observation and action latency matching, the policy exhibits significantly more jittery movements, due to the misalignment between observations and action executions.
+						<code>λ = argmax<sub>λ</sub> J<sup>task</sup></code>
+						<br><br>
+						Since we cannot directly compute ∇<sub>λ</sub>J<sup>task</sup>, we apply the chain rule:
+						<br>
+						<code>∇<sub>λ</sub>J<sup>task</sup> = ∇<sub>θ</sub>J<sup>task</sup> ∇<sub>λ</sub>θ</code>
+						<br><br>
+						This can be expanded into our final tractable form:
+						<br>
+						<code>∇<sub>λ</sub>J<sup>task</sup> ≈ α A<sup>task</sup> ∇<sub>θ'</sub> log π<sub>θ'</sub>(a|s,z) · A<sup>div</sup> ∇<sub>θ</sub> log π<sub>θ</sub>(a|s,z)</code>
+						<br><br>
+						This ensures λ increases when diversity helps task performance and decreases when it hinders progress.
+						</p>
+						
+
+						<hr>
+						<h3 style="color: #1f4e8b;">Results</h3>
+						<p style="color: black;">
+							We evaluate our framework on challenging locomotion tasks requiring distinctive control strategies. Our method successfully learns the necessary motor skills for all tasks, outperforming task-only baselines and demonstrating that incorporating diversity rewards helps in learning agile locomotion skills. Skill discovery functions as a high-level exploration module, enabling agents to systematically probe diverse strategies and rapidly identify the contact patterns and momentum profiles needed for task completion.
+						</p>
+
+						<h4 style="color: #1f4e8b;">Crawl</h4>
 						<div class="box alt" style="margin-bottom: 1em; margin-top: 1em;">
 							<div class="row 50% uniform" style="width: 100%;">
 								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
 									<span class="image fit" style="margin-bottom: 0.5em;">
 										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/task_dynamic_tossing.mp4" type="video/mp4">
+											<source src="vidoes_parkour/crawl_sim.mp4" type="video/mp4">
 										</video>
 									</span>
-									Ours
+									Sim
 								</div>
-
 								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
 									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/comparison_tossing_no_latency_matching.mp4" type="video/mp4"> </video>
+										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+											<source src="vidoes_parkour/crawl_real.mp4" type="video/mp4">
+										</video>
 									</span>
-									No Latency Matching
+									Real
 								</div>
 							</div>
 						</div>
 
-						<h4>(2) Cup Arrangement &#9749; </h4>
-						<u><b>Task</b></u> Pick up and place an espresso cup on the saucer with its handle facing to the left of the robot.
-						<!-- <br>
-						<u><b>Capability</b></u> This task tests the system’s ability to learn both prehensile (pick and place) and non-prehensile actions (i.e., pushing to reorientate the cup). It also tests UMI's capability of learning multi-modal action distributions and sense relative depth through monocular camera observation and side mirrors. -->
-						<br>
-						<u><b>Ablation</b></u> Data collected by UMI is robot agnostic. Here we can deploy the same policy on both UR5e and Franka robots. In fact, you can deploy it on any robot equipped with a parallel jaw stroke > 85mm.
+						<h4 style="color: #1f4e8b;">Leap</h4>
 						<div class="box alt" style="margin-bottom: 1em; margin-top: 1em;">
 							<div class="row 50% uniform" style="width: 100%;">
 								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
 									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/comparison_cup_ur5.mp4" type="video/mp4"> </video>
+										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+											<source src="vidoes_parkour/leap_sim.mp4" type="video/mp4">
+										</video>
 									</span>
-									Ours (UR5)
+									Sim
 								</div>
-
 								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
 									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/comparison_cup_franka.mp4" type="video/mp4"> </video>
+										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+											<source src="vidoes_parkour/leap_real.mp4" type="video/mp4">
+										</video>
 									</span>
-									Ours (Franka)
+									Real
 								</div>
-								
-								<!-- <div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.33%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/comparison_cup_abs_action_crop.mp4" type="video/mp4"> </video>
-									</span>
-									Absolute Action
-								</div> -->
 							</div>
 						</div>
-						
-						<h4>(3) Bimanual Cloth Folding &#128090; </h4>
-						<u><b>Task</b></u> Two robot arms need to coordinate and fold the sweater’s sleeves inward, then fold up the bottom hem, rotate 90 degrees, and finally fold the sweater in half again.
-						<!-- <br>
-						<u><b>Capability</b></u> It tests UMI’s ability to synchronize two-arm coordination. -->
-						<br>
-						<u><b>Ablation</b></u> Without inter-gripper proprioception (relative pose between the two grippers), the coordination between the two arms is significantly worse.
-						<!-- For example, when the two arms lift the bottom hem of the shirt, it often misses one of the grasps due to asynchronous grasp actions. -->
+
+						<h4 style="color: #1f4e8b;">Jump</h4>
 						<div class="box alt" style="margin-bottom: 1em; margin-top: 1em;">
 							<div class="row 50% uniform" style="width: 100%;">
 								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
 									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/task_cloth_folding.mp4" type="video/mp4"> </video>
+										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+											<source src="vidoes_parkour/jump_sim.mp4" type="video/mp4">
+										</video>
 									</span>
-									Ours
+									Sim
 								</div>
-
 								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
 									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/comparison_cloth_no_rel.mp4" type="video/mp4"> </video>
+										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+											<source src="vidoes_parkour/jump_real.mp4" type="video/mp4">
+										</video>
 									</span>
-									No Inter-gripper Proprioception
+									Real
 								</div>
 							</div>
 						</div>
 
-
-						<h4>(4) Dish Washing &#127869; </h4>
-						<u><b>Task</b></u> For successful dish washing, the robots need to sequentially execute 7 dependent actions: turn on faucet, grasp plate, pick up sponge, wash and wipe plate until ketchups are removed, place plate, place the sponge and turn off faucet.
-						<!-- <br>
-						<u><b>Capability</b></u> It is an ultra-long horizon task, involving complex fluid (i.e., ketchup), deformable tool (i.e., sponge), and constrained articulated object (i.e., faucet). The policy also need to be semantically robust to the concept of “cleanliness”.  -->
-						<br>
-						<u><b>Ablation</b></u> The baseline policy trained with ResNet-34 as vision encoder, yielded non-reactive behaviors towards variations in plate or sponge position.
-						<div class="box alt" style="margin-bottom: 1em; margin-top: 1em;">
-							<div class="row 50% uniform" style="width: 100%;">
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/task_dish_washing.mp4" type="video/mp4"> </video>
-									</span>
-									Ours (CLIP-pretrained ViT as Vision Encoder)
-								</div>
-
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/comparison_dish_resnet.mp4" type="video/mp4"> </video>
-									</span>
-									ResNet as Vision Encoder
-								</div>
-							</div>
-						</div>
-
-						<hr>
-						<h3>In-the-wild Generalization Experiments</h3>
-						With UMI, you can go to any home, any restaurant and start data collection within 2 minutes.
-						<!-- The demonstrations involved 15 espresso cups of different colors, shapes, and materials. -->
-						<div class="box alt" style="margin-bottom: 1em; margin-top: 1em;">
-							<div class="row 50% uniform" style="width: 100%;">
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/in_the_wild_cup_data_collection.mp4" type="video/mp4"> </video>
-									</span>
-									Human Data Collection
-								</div>
-
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 50%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/in_the_wild_cup_data_overview.mp4" type="video/mp4"> </video>
-									</span>
-									Data Overview
-								</div>
-							</div>
-						</div>
-
-						With a diverse in-the-wild cup manipulation dataset, UMI enabled us to train a diffusion policy that generalizes to extremely out-of-distribution objects and environments, even including serving expresso cup on top of a water fountain!
-
+												<h4 style="color: #1f4e8b;">Positive Skill Collapse</h4>
+						<p style="color: black;">
+							As training progresses, a growing number of skill vectors become capable of solving the task: <b style="color: #8B7000;">Leap ~97%</b>, <b style="color: #8B7000;">Climb ~65%</b>, <b style="color: #8B7000;">Crawl ~60%</b>. This suggests that once a viable solution is discovered, different skill vectors converge into similar behaviors. This phenomenon is facilitated by task rewards: when a skill finds a successful solution, learning propagates to other skill-conditioned behaviors through the shared policy network. We term this <b style="color: #8B7000;">"positive collapse"</b> of skills, which is beneficial because it mitigates the issue of selecting the right skill.
+						</p>
 						<div class="box alt" style="margin-bottom: 1em; margin-top: 1em;">
 							<div class="row 50% uniform" style="width: 100%;">
 								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 100%">
 									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/in_the_wild_cup_eval.mp4" type="video/mp4"> </video>
+										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+											<source src="vidoes_parkour/skill_collpse.mp4" type="video/mp4">
+										</video>
 									</span>
+									Skills converging to successful behaviors
 								</div>
 							</div>
-						</div>
-
+												</div>
+						
+						<h4 style="color: #1f4e8b;">Diverse Terrain Adaptation</h4>
+						<p style="color: black;">To evaluate the robustness of the crawling policy trained with our skill discovery approach, we deployed it on different terrains including wood and rubber mat surfaces. The robot successfully crawled under obstacles in both settings, demonstrating its ability to generalize across varying surface conditions and terrain properties.
+						</p>
 						<div class="box alt" style="margin-bottom: 1em; margin-top: 1em;">
 							<div class="row 50% uniform" style="width: 100%;">
 								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 100%">
 									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;"><source src="videos/in_the_wild_cup_all.mp4" type="video/mp4"> </video>
+										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+											<source src="vidoes_parkour/div_terrain.mp4" type="video/mp4">
+										</video>
 									</span>
+									Robust crawling across wood and rubber mat surfaces
+								</div>
+							</div>
+						</div>
+
+						<h4 style="color: #1f4e8b;">Wall-Jump: Learning Super Agile Tasks</h4>
+						<p style="color: black;">We pushed our method to its limits by introducing a new task named wall-jump. It requires the robot to perform a sequence of highly agile motions, including running, jumping, flipping, and landing in a specific order. Providing the guideline alone was not sufficient for the agent to successfully perform the wall-jump. Our method was able to acquire the specific orientation needed to kick off the wall by exploring diverse orientations through skill discovery, achieving successful wall-jumps with much higher task returns.
+						</p>
+						<div class="box alt" style="margin-bottom: 1em; margin-top: 1em;">
+							<div class="row 50% uniform" style="width: 100%;">
+								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 100%">
+									<span class="image fit" style="margin-bottom: 0.5em;">
+										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
+											<source src="vidoes_parkour/wall_jump.mp4" type="video/mp4">
+										</video>
+									</span>
+									Super Agile Walljump Task
 								</div>
 							</div>
 						</div>
 
 						<hr>
-						<h3>Data Collection Methods</h3>
-						Thanks to its portablity and intuitive design, UMI allows for &#9889; fast data collection at a rate of 30 seconds/demonstration.
-				        <h4>Comparison with Other Methods</h4>
-						For the cup arrangement task, UMI gripper is over 3× faster than teleportation, reaching 48% of human hand speed.
-						<div class="box alt" style="margin-bottom: 1em; margin-top: 1em;">
-							<div class="row 50% uniform" style="width: 100%;">
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.3%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/throughput_cup_umi_crop.mp4" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; left: 2%">
-											<p style="color: black; text-align: center; font-size: 1em">111/h</p>
-										</div>
-									</span>
-									UMI Gripper
-								</div>
-								
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.3%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/throughput_cup_hand_crop.mp4" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; left: 2%">
-											<p style="color: black; text-align: center; font-size: 1em">231/h</p>
-										</div>
-									</span>
-									Human Hand
-								</div>
-
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.3%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/throughput_cup_teleop_crop.mp4" type="video/mp4">
-										</video>
-										<div style="position: absolute; top: 2%; left: 2%">
-											<p style="color: black; text-align: center; font-size: 1em">35/h</p>
-										</div>
-									</span>
-									Teleoperation via Space Mouse
-								</div>
-							</div>
-						</div>
-						<h4>Human Demonstration on Other Tasks Using UMI Gripper</h4>
-
-						<div class="box alt" style="margin-bottom: 1em; margin-top: 1em;">
-							<div class="row 50% uniform" style="width: 100%;">
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.3%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/throughput_tossing_crop.mp4" type="video/mp4">
-										</video>
-									</span>
-									Dynamic Tossing
-								</div>
-								
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.3%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/throughput_cloth_crop.mp4" type="video/mp4">
-										</video>
-									</span>
-									Cloth Folding
-								</div>
-
-								<div class="2u" style="font-size: 1em; line-height: 1.5em; text-align: center; width: 33.3%">
-									<span class="image fit" style="margin-bottom: 0.5em;">
-										<video controls autoplay loop muted playsinline style="width: 100%; margin-right: 5%;">
-											<source src="videos/throughput_dish_crop.mp4" type="video/mp4">
-										</video>
-									</span>
-									Dish Washing
-								</div>
-							</div>
-						</div>
-
-						<hr>
-				        <h3>Acknowledgements</h3>
-				        <p>This work was supported in part by the Toyota Research Institute, NSF Award #2037101, and #2132519. We want to thank Google and TRI for the UR5 robots, and IRIS and IPRL lab for the Franka robot hardware. The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies, either expressed or implied, of the sponsors.</p>
-						<p>We would like to thank Andy Zeng, Pete Florance, Huy Ha, Yihuai Gao, Samir Gadre, Mandi Zhao, Mengda Xu, Alper Canberk, Kevin Zakka, Zeyi Liu, Dominik Bauer, Tony Zhao, Zipeng Fu and Lucy Shi for their thoughtful discussions. We thank Alex Alspach, Brandan Hathaway, Aimee Goncalves, Phoebe Horgan, and Jarod Wilson for their help on hardware design and prototyping. We thank Naveen Kuppuswamy, Dale McConachie, and Calder Phillips-Graffine for their help on low-level controllers. We thank John Lenard, Frank Michel, Charles Richter, and Xiang Li for their advice on SLAM. We thank Eric Dusel, Nwabisi C., and Letica Priebe Rocha for their help on the MoCap dataset collection. We thank Chen Wang, Zhou Xian, Moo Jin Kim, and Marion Lepert for their assistance with the Franka setup. We especially thank Steffen Urban for his open-source projects on GoPro SLAM and Camera-IMU calibration, and John @ 3D printing world for inspiration of the gripper mechanism.</p>
+						<h3 style="color: #1f4e8b;">Acknowledgements</h3>
+						<p style="color: black;"></p>
 						
-						<h3>Contact</h3>
-				        <p>If you have any questions, please feel free to contact <a href="http://cheng-chi.github.io/">Cheng Chi</a> and <a href="https://zhenjiaxu.com/">Zhenjia Xu</a>.</p>
+						<h3 style="color: #1f4e8b;">Contact</h3>
+						<p style="color: black;">If you have any questions, please feel free to contact <a href="https://sites.google.com/view/kartik-garg/home" style="color: #1f4e8b; text-decoration: none !important; border-bottom: none !important;">Kartik Garg</a>.</p>
 						
 					</section>
 
